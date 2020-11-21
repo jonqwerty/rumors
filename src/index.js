@@ -8,6 +8,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter, Route } from 'react-router-dom';
+import { Provider } from './StoreContext';
 
 
 
@@ -15,7 +16,9 @@ let rerenderEntireTree = (state) => {
   ReactDOM.render(
     <BrowserRouter>
     <React.StrictMode>
-      <App state={state} dispatch={store.dispatch.bind(store)} store={store} />
+      <Provider store={store}>
+        <App  />
+      </Provider>
     </React.StrictMode>
     </BrowserRouter>,
     document.getElementById('root'));
