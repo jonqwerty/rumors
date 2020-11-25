@@ -20,4 +20,13 @@
  
   }
 
+  .loginBlock{
+    flex: right;
+    
+  }
+
+  .loginBlock a{
+    color: white;
+  }
+
   
