@@ -6,6 +6,7 @@ import './App.css';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 import HeaderComponent from './components/Header/HeaderContainer';
+import LoginPage from './components/Login/Login';
 import Music from './components/Music/Music';
 import Navbar from './components/Navbar/Navbar';
 import News from './components/News/News';
@@ -32,6 +33,9 @@ const App = (props) => {
           
           <Route path='/users' 
                   render={ () => <UsersContainer /> } />
+
+          <Route path='/login' 
+                  render={ () => <LoginPage /> } />
 
 
           <Route path='/news' render={ () => <News /> } />
