@@ -4,7 +4,6 @@ import s from './ProfileInfo.module.css';
 import w from './profile_top.jpg'
 
 class ProfileStatus extends React.Component {
-    
 
     state = {
         editMode: false,
@@ -51,7 +50,7 @@ class ProfileStatus extends React.Component {
                 }
                 {this.state.editMode &&
                     <div>
-                        <input onChange={this.onStatusChange} autoFocus={true} onBlur={ this.deactivateEditMode } value={this.state.status} />
+                        <input onChange={this.onStatusChange} autoFocus={true} onBlur={ this.deactivateEditMode.bind(this) } value={this.state.status} />
                     </div>
                 }
 
