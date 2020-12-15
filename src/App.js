@@ -15,7 +15,6 @@ import News from './components/News/News';
 
 import ProfileContainer from './components/Profile/ProfileContainer';
 import UsersContainer from './components/Users/UsersContainer';
-import store from './redux/redux-store';
 import { getAuthUserData } from './redux/auth-reducer';
 import { initializeApp } from './redux/app-reducer';
 import Preloader from './components/common/Preloader/Preloader';
@@ -30,9 +29,7 @@ class App extends Component {
             if (!this.props.initialized) {
                 return < Preloader />
         }
-
         return (
-        
                 <div className='app-wrapper'>
                         <HeaderComponent />
                         <Navbar />
