@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "classnames": "^2.2.6",
     "react-test-renderer": "^17.0.1"
   }
 }
