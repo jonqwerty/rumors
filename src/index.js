@@ -5,17 +5,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { BrowserRouter, Route } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 ReactDOM.render(
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter >
     <React.StrictMode>
       <Provider store={store}>
         <App  />
       </Provider>
     </React.StrictMode>
-    </BrowserRouter>,    document.getElementById('root'));
+    </HashRouter>,    document.getElementById('root'));
 
 
 
