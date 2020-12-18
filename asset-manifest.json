@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/rumors/static/css/main.321d3c45.chunk.css",
-    "main.js": "/rumors/static/js/main.20a5b1e3.chunk.js",
-    "main.js.map": "/rumors/static/js/main.20a5b1e3.chunk.js.map",
+    "main.js": "/rumors/static/js/main.19662f73.chunk.js",
+    "main.js.map": "/rumors/static/js/main.19662f73.chunk.js.map",
     "runtime-main.js": "/rumors/static/js/runtime-main.374001b4.js",
     "runtime-main.js.map": "/rumors/static/js/runtime-main.374001b4.js.map",
     "static/js/2.15e752a8.chunk.js": "/rumors/static/js/2.15e752a8.chunk.js",
@@ -23,6 +23,6 @@
     "static/js/runtime-main.374001b4.js",
     "static/js/2.15e752a8.chunk.js",
     "static/css/main.321d3c45.chunk.css",
-    "static/js/main.20a5b1e3.chunk.js"
+    "static/js/main.19662f73.chunk.js"
   ]
 }
