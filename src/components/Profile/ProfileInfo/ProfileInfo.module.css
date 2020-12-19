@@ -2,9 +2,8 @@
     padding: 10px;
 }
 
-.topImage div img{
-    width: 1000px; 
-    height:350px;
-    
+.mainPhoto{
+    max-width: 200px; 
+        
 }
 
