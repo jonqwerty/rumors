@@ -1,7 +1,7 @@
 //import logo from './logo.svg';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Redirect, Route, Switch, withRouter } from 'react-router-dom';
+import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import './App.css';
 
@@ -15,7 +15,6 @@ import News from './components/News/News';
 
 import ProfileContainer from './components/Profile/ProfileContainer';
 import UsersContainer from './components/Users/UsersContainer';
-import { getAuthUserData } from './redux/auth-reducer';
 import { initializeApp } from './redux/app-reducer';
 import Preloader from './components/common/Preloader/Preloader';
 import { withSuspense } from './hoc/withSuspense';
