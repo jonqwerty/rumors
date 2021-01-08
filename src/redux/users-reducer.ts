@@ -30,7 +30,7 @@ const usersReducer = (state = initialState, action: ActionsTypes): InitialStateT
     switch(action.type) {
         case FOLLOW:
             return { 
-                ... state,
+                ...state,
                 users: state.users.map( u => {
                     if (u.id === action.userId) {
                         return {...u, followed: true}
@@ -41,7 +41,7 @@ const usersReducer = (state = initialState, action: ActionsTypes): InitialStateT
 
         case UNFOLLOW:
             return { 
-                ... state,
+                ...state,
                 users: state.users.map( u => {
                     if (u.id === action.userId) {
                         return {...u, followed: false}
@@ -68,7 +68,7 @@ const usersReducer = (state = initialState, action: ActionsTypes): InitialStateT
                 ...state,
                 followingInProgress: action.isFetching 
                 ? [ ...state.followingInProgress, action.userId] 
-                : state.followingInProgress.filter(id => id != action.userId)
+                : state.followingInProgress.filter(id => id !== action.userId)
             }
         }
 
@@ -149,7 +149,7 @@ export const follow = (userId: number ): Thunktype => {
         dispatch(toggleFollowingProgress(true, userId));
         let response = await usersAPI.follow(userId)
             
-            if (response.data.resultCode == 0) {
+            if (response.data.resultCode === 0) {
                 dispatch(followSuccess(userId));
         };
             dispatch(toggleFollowingProgress(false, userId));
@@ -162,7 +162,7 @@ export const unfollow = (userId: number ): Thunktype => {
         dispatch(toggleFollowingProgress(true, userId));
         let response = await usersAPI.unfollow(userId)
             
-                if (response.data.resultCode == 0) {
+                if (response.data.resultCode === 0) {
                     dispatch(unfollowSuccess(userId));
                 };
                 dispatch(toggleFollowingProgress(false, userId));

@@ -1,5 +1,5 @@
 import { stopSubmit } from "redux-form";
-import { authAPI,securityAPI  } from "../api/api";
+import { authAPI,ResultCodeForCaptcha,ResultCodesEnum,securityAPI  } from "../api/api";
 
 const SET_USER_DATA = 'auth/SET_USER_DATA';
 const GET_CAPTCHA_URL_SUCCESS = 'auth/GET_CAPTCHA_URL_SUCCESS';
@@ -26,13 +26,13 @@ const authReducer = (state=initialState, action: any): InitialStateType => {
     switch(action.type) {
         case SET_USER_DATA:
             return { 
-                ... state,
-                ... action.payload,  
+                ...state,
+                ...action.payload,  
             }
         case GET_CAPTCHA_URL_SUCCESS:
             return { 
-                ... state,
-                ... action.payload,   
+                ...state,
+                ...action.payload,   
             }
         default:
             return state;
@@ -77,10 +77,10 @@ export const getCaptchaUrlSuccess = (captchaUrl: string): GetCaptchaUrlSuccessAc
 // }
 
 export const getAuthUserData = () => async (dispatch: any) => {
-    let response = await authAPI.me()
+    let meData = await authAPI.me()
 
-    if (response.data.resultCode === 0) {
-        let { id, login, email } = response.data.data;
+    if (meData.resultCode === ResultCodesEnum.Success) {
+        let { id, login, email } = meData.data;
         dispatch(setAuthUserData(id, email, login, true));
     }
 }
@@ -98,15 +98,16 @@ export const getAuthUserData = () => async (dispatch: any) => {
 // }
 
 export const login = (email: string, password: string, rememberMe: boolean, captcha: string) => async (dispatch: any) => {
-    let response = await authAPI.login(email, password, rememberMe, captcha)
+    let data = await authAPI.login(email, password, rememberMe, captcha)
         
-    if (response.data.resultCode === 0) {
+    if (data.resultCode === ResultCodesEnum.Success) {
         dispatch(getAuthUserData())
     } else {
-        if (response.data.resultCode === 10) {
+        // why it noy work ResultCodeForCaptcha.CaptchaIsRequired
+        if (data.resultCode === 10) {
             dispatch(getCaptchaUrl())
         }
-        let message = response.data.messages.length > 0 ? response.data.messages[0] : 'Some error';
+        let message = data.messages.length > 0 ? data.messages[0] : 'Some error';
         dispatch(stopSubmit('login', { _error: message }));
     }       
 }
