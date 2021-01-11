@@ -1,8 +1,14 @@
-import React from 'react';
-import { Field } from 'redux-form';
+import React from 'react'
+import { Field, WrappedFieldMetaProps, WrappedFieldProps } from 'redux-form'
+import { FieldValidatorType } from '../../../utils/validators/validators'
 import s from './FormsControls.module.css'
 
-const FormControl = ({input, meta: {touched, error }, children}) => {
+type FormControlPropsType = {
+    meta: WrappedFieldMetaProps
+}
+
+
+const FormControl: React.FC<FormControlPropsType> = ({ meta: {touched, error }, children}) => {
     const hasError = touched && error
     return (
         <div className = {s.formControl + " " + (hasError ? s.error : "")}>
@@ -39,17 +45,23 @@ const FormControl = ({input, meta: {touched, error }, children}) => {
 //         </div>
 //     )
 // }
-export const Textarea = (props) => {
-    const {input, meta, child, ...restProps} = props
+export const Textarea: React.FC<WrappedFieldProps> = (props) => {
+    //const {input, meta, child, ...restProps} = props
+    const {input, meta, ...restProps} = props
     return <FormControl {...props}><textarea {...input} {...restProps} /></FormControl>
 }
 
-export const Input = (props) => {
-    const {input, meta, child, ...restProps} = props
+export const Input: React.FC<WrappedFieldProps> = (props) => {
+    //const {input, meta, child, ...restProps} = props
+    const {input, meta, ...restProps} = props
     return <FormControl {...props}><input {...input} {...restProps} /></FormControl>
 }
 
-export const createField = (placeholder, name, validators, component, props = {} , text = "") => { <div>
+export const createField = (placeholder: string | undefined, 
+                            name: string, 
+                            validators: Array<FieldValidatorType> , 
+                            component: React.FC<WrappedFieldProps>, 
+                            props = {} , text = "") => { <div>
         <Field placeholder={placeholder} name={name}
                 validate={validators}
                 component={component}
