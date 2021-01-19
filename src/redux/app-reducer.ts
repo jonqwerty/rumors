@@ -1,8 +1,8 @@
 
-import { getAuthUserData } from "./auth-reducer";
-import { InferActionsTypes } from "./redux-store";
+import { getAuthUserData } from "./auth-reducer"
+import { InferActionsTypes } from "./redux-store"
 
-//const INITIALIZED_SUCCESS = 'SN/APP/INITIALIZED_SUCCESS';
+//const INITIALIZED_SUCCESS = 'R/APP/INITIALIZED_SUCCESS'
    
 
 let initialState = {
@@ -15,7 +15,7 @@ type ActionsType = InferActionsTypes<typeof actions>
 
 const appReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
     switch(action.type) {
-        case 'SN/APP/INITIALIZED_SUCCESS':
+        case 'R/APP/INITIALIZED_SUCCESS':
             return { 
                 ... state,
                 initialized: true
@@ -29,7 +29,7 @@ const appReducer = (state: InitialStateType = initialState, action: ActionsType)
 
 
 export const actions = {
-    initializedSuccess: () => ({type: 'SN/APP/INITIALIZED_SUCCESS'} as const)
+    initializedSuccess: () => ({type: 'R/APP/INITIALIZED_SUCCESS'} as const)
 }
 
 
@@ -43,4 +43,4 @@ export const initializeApp = ( ) => (dispatch: any) => {
 }
 
 
-export default appReducer;
+export default appReducer
