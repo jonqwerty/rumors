@@ -1,7 +1,7 @@
 //import logo from './logo.svg';
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
+import { connect, Provider } from 'react-redux';
+import { BrowserRouter, Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import './App.css';
 
@@ -18,6 +18,7 @@ import UsersContainer from './components/Users/UsersContainer';
 import { initializeApp } from './redux/app-reducer';
 import Preloader from './components/common/Preloader/Preloader';
 import { withSuspense } from './hoc/withSuspense';
+import store from './redux/redux-store';
 
 //import DialogsContainer from './components/Dialogs/DialogsContainer';
 const DialogsContainer = React.lazy( () => import ('./components/Dialogs/DialogsContainer'));
@@ -88,16 +89,16 @@ const mapStateToProps = (state) => ({
         initialized: state.app.initialized
 })
 
-export default compose( 
+export default  compose( 
         withRouter,
         connect (mapStateToProps, { initializeApp })) (App);
 
 
 
-export const SamuraiJSApp = () => {
-        return <BrowserRouter>
-                        <Provider store={store}>
-                                <AppContainer/>
-                        </Provider>
-                </BrowserRouter>
-}
+// export const SamuraiJSApp = () => {
+//          return <BrowserRouter>
+//                          <Provider store={store}>
+//                                  <AppContainer />
+//                          </Provider>
+//                  </BrowserRouter>
+// }
