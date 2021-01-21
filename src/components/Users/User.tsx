@@ -1,11 +1,17 @@
-import React from 'react';
-import styles from './Users.module.css';
+import React from 'react'
+import styles from './Users.module.css'
 import userPhoto from './../../assets/images/default_image.png'
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
+import { UserType } from '../../types/types'
 
+type PropsType = {
+    user: UserType
+    followingInProgress: Array<number>
+    unfollow: (userId: number) => void
+    follow: (userId: number) => void
+}
 
-
-let User = ({user, followingInProgress, unfollow, follow}) => {
+let User: React.FC<PropsType> = ({user, followingInProgress, unfollow, follow}) => {
     let u = user
     return( 
        
@@ -38,4 +44,4 @@ let User = ({user, followingInProgress, unfollow, follow}) => {
       
 }
 
-export default User;
+export default User
