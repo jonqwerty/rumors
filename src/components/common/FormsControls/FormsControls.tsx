@@ -20,31 +20,7 @@ const FormControl: React.FC<FormControlPropsType> = ({ meta: {touched, error }, 
     )
 }
 
-// export const Textarea = ({input, meta, ...props}) => {
 
-//     const hasError = meta.touched && meta.error;
-//     return (
-//         <div className={styles.formControl + " " + (hasError ? styles.error : "")}>
-//             <div>
-//                 <textarea {...input } {...props} />
-//             </div>
-//             { hasError && <span>{meta.error}</span>}
-//         </div>
-//     )
-// }
-
-// export const Input = ({input, meta, ...props}) => {
-
-//     const hasError = meta.touched && meta.error;
-//     return (
-//         <div className={styles.formControl + " " + (hasError ? styles.error : "")}>
-//             <div>
-//                 <input {...input } {...props} />
-//             </div>
-//             { hasError && <span>{meta.error}</span>}
-//         </div>
-//     )
-// }
 export const Textarea: React.FC<WrappedFieldProps> = (props) => {
     //const {input, meta, child, ...restProps} = props
     const {input, meta, ...restProps} = props
@@ -70,3 +46,5 @@ export const createField = (placeholder: string | undefined,
     </div>
 
 }
+
+export type GetStringKeys<T> = Extract<keyof T, string>
