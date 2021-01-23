@@ -7,15 +7,9 @@ import reportWebVitals from './reportWebVitals'
 
 import { HashRouter, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
+import RumorsApp from './App'
 
-ReactDOM.render(
-    <HashRouter >
-    <React.StrictMode>
-      <Provider store={store}>
-        <App  />
-      </Provider>
-    </React.StrictMode>
-    </HashRouter>,    document.getElementById('root'))
+ReactDOM.render(<RumorsApp  />, document.getElementById('root'))
 
 
 

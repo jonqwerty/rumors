@@ -1,7 +1,7 @@
 
 import React, { Component, ComponentType } from 'react'
 import { connect, Provider } from 'react-redux'
-import { BrowserRouter, Redirect, Route, Switch, withRouter } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Redirect, Route, Switch, withRouter } from 'react-router-dom'
 import { compose } from 'redux'
 import './App.css'
 import HeaderComponent from './components/Header/HeaderContainer'
@@ -90,12 +90,14 @@ let AppContainer =  compose<React.ComponentType>(
         connect (mapStateToProps, { initializeApp })) (App)
 
 
-const SamuraiJSApp: React.FC = () => {
-       return <BrowserRouter>
+const RumorsApp: React.FC = () => {
+        return  <HashRouter>
+                <React.StrictMode>
                         <Provider store={store}>
                                  <AppContainer />
                         </Provider>
-                </BrowserRouter>
+                </React.StrictMode>
+                </HashRouter>
  }
 
-export default SamuraiJSApp
+export default RumorsApp
