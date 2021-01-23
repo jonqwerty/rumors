@@ -1,31 +1,31 @@
 {
   "files": {
     "main.css": "/rumors/static/css/main.e0c6fb30.chunk.css",
-    "main.js": "/rumors/static/js/main.25794638.chunk.js",
-    "main.js.map": "/rumors/static/js/main.25794638.chunk.js.map",
-    "runtime-main.js": "/rumors/static/js/runtime-main.9c1ad08b.js",
-    "runtime-main.js.map": "/rumors/static/js/runtime-main.9c1ad08b.js.map",
-    "static/js/2.cf033e58.chunk.js": "/rumors/static/js/2.cf033e58.chunk.js",
-    "static/js/2.cf033e58.chunk.js.map": "/rumors/static/js/2.cf033e58.chunk.js.map",
+    "main.js": "/rumors/static/js/main.d1a81192.chunk.js",
+    "main.js.map": "/rumors/static/js/main.d1a81192.chunk.js.map",
+    "runtime-main.js": "/rumors/static/js/runtime-main.a500586f.js",
+    "runtime-main.js.map": "/rumors/static/js/runtime-main.a500586f.js.map",
+    "static/js/2.eb783d59.chunk.js": "/rumors/static/js/2.eb783d59.chunk.js",
+    "static/js/2.eb783d59.chunk.js.map": "/rumors/static/js/2.eb783d59.chunk.js.map",
     "static/css/3.1c3ab05c.chunk.css": "/rumors/static/css/3.1c3ab05c.chunk.css",
-    "static/js/3.1001dc8d.chunk.js": "/rumors/static/js/3.1001dc8d.chunk.js",
-    "static/js/3.1001dc8d.chunk.js.map": "/rumors/static/js/3.1001dc8d.chunk.js.map",
+    "static/js/3.e507c861.chunk.js": "/rumors/static/js/3.e507c861.chunk.js",
+    "static/js/3.e507c861.chunk.js.map": "/rumors/static/js/3.e507c861.chunk.js.map",
     "static/css/4.59e45b5f.chunk.css": "/rumors/static/css/4.59e45b5f.chunk.css",
-    "static/js/4.6757c97b.chunk.js": "/rumors/static/js/4.6757c97b.chunk.js",
-    "static/js/4.6757c97b.chunk.js.map": "/rumors/static/js/4.6757c97b.chunk.js.map",
+    "static/js/4.672145c9.chunk.js": "/rumors/static/js/4.672145c9.chunk.js",
+    "static/js/4.672145c9.chunk.js.map": "/rumors/static/js/4.672145c9.chunk.js.map",
     "static/js/5.8ccf5a30.chunk.js": "/rumors/static/js/5.8ccf5a30.chunk.js",
     "static/js/5.8ccf5a30.chunk.js.map": "/rumors/static/js/5.8ccf5a30.chunk.js.map",
     "index.html": "/rumors/index.html",
     "static/css/3.1c3ab05c.chunk.css.map": "/rumors/static/css/3.1c3ab05c.chunk.css.map",
     "static/css/4.59e45b5f.chunk.css.map": "/rumors/static/css/4.59e45b5f.chunk.css.map",
     "static/css/main.e0c6fb30.chunk.css.map": "/rumors/static/css/main.e0c6fb30.chunk.css.map",
-    "static/js/2.cf033e58.chunk.js.LICENSE.txt": "/rumors/static/js/2.cf033e58.chunk.js.LICENSE.txt",
+    "static/js/2.eb783d59.chunk.js.LICENSE.txt": "/rumors/static/js/2.eb783d59.chunk.js.LICENSE.txt",
     "static/media/preloader.c594ff9e.svg": "/rumors/static/media/preloader.c594ff9e.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9c1ad08b.js",
-    "static/js/2.cf033e58.chunk.js",
+    "static/js/runtime-main.a500586f.js",
+    "static/js/2.eb783d59.chunk.js",
     "static/css/main.e0c6fb30.chunk.css",
-    "static/js/main.25794638.chunk.js"
+    "static/js/main.d1a81192.chunk.js"
   ]
 }
