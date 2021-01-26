@@ -1,5 +1,5 @@
 {
-  "name": "project-1",
+  "name": "rumors",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://jonqwerty.github.io/rumors",
@@ -17,6 +17,7 @@
     "@types/react-test-renderer": "^17.0.0",
     "@types/redux-form": "^8.3.1",
     "axios": "^0.21.0",
+    "formik": "^2.2.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
