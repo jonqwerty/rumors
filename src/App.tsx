@@ -5,16 +5,16 @@ import { BrowserRouter, HashRouter, Redirect, Route, Switch, withRouter } from '
 import { compose } from 'redux'
 import './App.css'
 import HeaderComponent from './components/Header/HeaderContainer'
-import LoginPage from './components/Login/Login'
 import Music from './components/Music/Music'
 import Navbar from './components/Navbar/Navbar'
 import News from './components/News/News'
 
-import UsersContainer from './components/Users/UsersContainer'
 import { initializeApp } from './redux/app-reducer'
 import Preloader from './components/common/Preloader/Preloader'
 import { withSuspense } from './hoc/withSuspense'
 import store, { AppStateType } from './redux/redux-store'
+import { UsersPage } from './components/Users/UsersContainer'
+import { LoginPage } from './components/Login/Login'
 
 //import DialogsContainer from './components/Dialogs/DialogsContainer';
 const DialogsContainer = React.lazy( () => import ('./components/Dialogs/DialogsContainer'))
@@ -63,7 +63,7 @@ class App extends Component<MapPropsType & DispatchPropsType> {
                                         render={ () => <SuspendedProfile />  }/>
                                         
                                 <Route path='/users' 
-                                        render={ () => <UsersContainer pageTitle={'samurai'} /> } />
+                                        render={ () => <UsersPage pageTitle={'Samurai'} /> } />
 
                                 <Route path='/login' 
                                         render={ () => <LoginPage /> } />
