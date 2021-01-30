@@ -30,6 +30,7 @@ const { Content, Sider, Footer } = Layout;
 //import DialogsContainer from './components/Dialogs/DialogsContainer';
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'))
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'))
+const ChatPage = React.lazy(() => import('./pages/Chat/ChatPage'))
 
 
 type MapPropsType = ReturnType<typeof mapStateToProps>
@@ -39,6 +40,7 @@ type DispatchPropsType = {
 
 const SuspendedDialogs = withSuspense(DialogsContainer)
 const SuspendedProfile = withSuspense(ProfileContainer)
+const SuspendedChatPage = withSuspense(ChatPage)
 
 class App extends Component<MapPropsType & DispatchPropsType> {
         catchAllUnhandledErrors = (e: PromiseRejectionEvent) => {
@@ -85,7 +87,7 @@ class App extends Component<MapPropsType & DispatchPropsType> {
                                                                 <Menu.Item key="8">option8</Menu.Item>
                                                         </SubMenu>
                                                         <SubMenu key="sub3" icon={<NotificationOutlined />} title="subnav 3">
-                                                                <Menu.Item key="9">option9</Menu.Item>
+                                                                <Menu.Item key="9"><Link to='/chat' >Chat</Link></Menu.Item>
                                                                 <Menu.Item key="10">option10</Menu.Item>
                                                                 <Menu.Item key="11">option11</Menu.Item>
                                                                 <Menu.Item key="12">option12</Menu.Item>
@@ -122,6 +124,9 @@ class App extends Component<MapPropsType & DispatchPropsType> {
 
                                                                 <Route path='/login'
                                                                         render={() => <LoginPage />} />
+
+                                                                <Route path='/chat'
+                                                                        render={() => <SuspendedChatPage />} />
 
 
                                                                 <Route path='/news' render={() => <News />} />
