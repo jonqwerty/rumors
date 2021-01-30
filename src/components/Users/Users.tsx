@@ -69,7 +69,7 @@ export const Users: FC<PropsType> = (props) => {
 
 
       history.push({
-        pathname: '/users',
+        pathname: '/developers', 
         search: queryString.stringify(query)
         //search: `?term=${filter.term}&friend=${filter.friend}&page=${currentPage}`
       })
