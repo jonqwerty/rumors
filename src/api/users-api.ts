@@ -13,4 +13,4 @@ export const usersAPI = {
     unfollow(userId: number) {
        return instance.delete(`follow/${userId}`).then(res => res.data) as Promise<APIResponseType>
     }
-}
+} 
